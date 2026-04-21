@@ -1,0 +1,48 @@
+{
+    "EN": {
+        [
+            "name": "National University of the South",
+            "start": "2016",
+            "finish": "Present",
+            "info": "Information Systems Engineering",
+            "place": "Bahía Blanca, Buenos Aires, Argentina"
+        ],
+        [
+            "name": "Secondary School N°728 Alfonsina Storni",
+            "start": "2013",
+            "finish": "2015",
+            "info": "Communication, Art and Design",
+            "place": "Puerto Madryn, Chubut, Argentina"
+        ],
+        [
+            "name": "Provincial Secondary School N°789 René Favaloro",
+            "start": "2010",
+            "finish": "2012",
+            "info": "",
+            "place": "Puerto Madryn, Chubut, Argentina"
+        ]
+    },
+    "ES": {
+        [
+            "name": "Universidad Nacional del Sur",
+            "start": "2016",
+            "finish": "Presente",
+            "info": "Ingeniería en Sistemas de Información",
+            "place": "Bahía Blanca, Buenos Aires"
+        ],
+        [
+            "name": "Escuela Secundaria Nº728 Alfonsina Storni",
+            "start": "2013",
+            "finish": "2015",
+            "info": "Comunicación, Arte y Diseño",
+            "place": "Puerto Madryn, Chubut"
+        ],
+        [
+            "name": "Escuela Provincial Nº789",
+            "start": "2010",
+            "finish": "2012",
+            "info": "",
+            "place": "Puerto Madryn, Chubut"
+        ]
+    }
+}
