@@ -1,7 +1,32 @@
 import json
+import sys
+import os
 
-with open('./education.json', 'r', encoding='utf-8') as file:
-    print("hello")
-    data = json.load(file)
+# Language: default ES, override with first CLI argument (e.g. python3 education.py EN)
+lang = sys.argv[1] if len(sys.argv) > 1 else "ES"
 
-print("hello world")    
+json_path = os.path.join(os.path.dirname(__file__), '..', 'json', 'education.json')
+
+with open(json_path, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+entries = data.get(lang, data["ES"])
+
+print(r"\resumeSubHeadingListStart")
+
+for entry in entries:
+    name   = entry["name"]
+    start  = entry["start"]
+    finish = entry["finish"]
+    info   = entry.get("info", "")
+    place  = entry["place"]
+
+    date_range = f"{start} -- {finish}" if finish else start
+
+    print(rf"  \resumeSubheading")
+    print(rf"    {{{name}}}")
+    print(rf"    {{{date_range}}}")
+    print(rf"    {{{info}}}")
+    print(rf"    {{{place}}}")
+
+print(r"\resumeSubHeadingListEnd")

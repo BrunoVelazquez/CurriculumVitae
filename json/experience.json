@@ -1,6 +1,6 @@
 {
-    "ES": {
-        [
+    "ES": [
+        {
             "role": "Backend Developer - Data Warehousing",
             "start": "Agosto 2025",
             "finish": "Diciembre 2025",
@@ -9,8 +9,8 @@
             "tasks": [
                 "Desarrollé y configuré una estructura de Data Warehouse, utilizando Python, Docker y Google Cloud Run, automatizando la extracción de métricas históricas en el uso de la plataforma."
             ]
-        ],
-        [
+        },
+        {
             "role": "Fullstack Developer - Práctica Profesional Supervisada",
             "start": "Mayo 2025",
             "finish": "Agosto 2025",
@@ -20,10 +20,10 @@
                 "Refactoricé la interfaz del mapa principal, aumentando su legibilidad y capacidad de extensión de su comportamiento en React Native.",
                 "Desarrollé de forma full-stack la funcionalidad de registro y liberación de bicicletas en estacionamientos con códigos QR utilizando librerías de Expo, SQL y APIs.",
                 "Continué y finalicé el desarrollo full-stack de una funcionalidad de reservas y comunicación entre pasajeros y conductores para viajes compartidos.",
-                "Investigué, diseñé e implementé la primera versión de términos y condiciones legales de uso para la funcionalidad de viajes compartidos.",
+                "Investigué, diseñé e implementé la primera versión de términos y condiciones legales de uso para la funcionalidad de viajes compartidos."
             ]
-        ],
-        [
+        },
+        {
             "role": "Docente - Alfabetización digital",
             "start": "2023",
             "finish": "",
@@ -32,41 +32,41 @@
             "tasks": [
                 "Dicté clases a miembros del PAMI sobre el uso seguro de aplicaciones en smartphones, mejorando su autonomía digital."
             ]
-        ]
-    },
-    "EN": {
-        [
+        }
+    ],
+    "EN": [
+        {
             "role": "Backend Developer - Data Warehousing",
-            "start": "Agosto 2025",
-            "finish": "Diciembre 2025",
+            "start": "August 2025",
+            "finish": "December 2025",
             "company": "RocketBeet",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Desarrollé y configuré una estructura de Data Warehouse, utilizando Python, Docker y Google Cloud Run, automatizando la extracción de métricas históricas en el uso de la plataforma."
+                "Developed and configured a Data Warehouse structure using Python, Docker and Google Cloud Run, automating the extraction of historical metrics on platform usage."
             ]
-        ],
-        [
-            "role": "Fullstack Developer - Práctica Profesional Supervisada",
-            "start": "Mayo 2025",
-            "finish": "Agosto 2025",
+        },
+        {
+            "role": "Fullstack Developer - Supervised Professional Practice",
+            "start": "May 2025",
+            "finish": "August 2025",
             "company": "Plataforma Sustentabilidad Integral",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Refactoricé la interfaz del mapa principal, aumentando su legibilidad y capacidad de extensión de su comportamiento en React Native.",
-                "Desarrollé de forma full-stack la funcionalidad de registro y liberación de bicicletas en estacionamientos con códigos QR utilizando librerías de Expo, SQL y APIs.",
-                "Continué y finalicé el desarrollo full-stack de una funcionalidad de reservas y comunicación entre pasajeros y conductores para viajes compartidos.",
-                "Investigué, diseñé e implementé la primera versión de términos y condiciones legales de uso para la funcionalidad de viajes compartidos.",
+                "Refactored the main map interface, improving readability and extensibility of its behavior in React Native.",
+                "Developed full-stack the bike registration and release functionality at parking lots with QR codes using Expo libraries, SQL and APIs.",
+                "Continued and completed the full-stack development of a ride-sharing booking and communication feature between passengers and drivers.",
+                "Researched, designed and implemented the first version of legal terms and conditions for the ride-sharing functionality."
             ]
-        ],
-        [
-            "role": "Docente - Alfabetización digital",
+        },
+        {
+            "role": "Teacher - Digital Literacy",
             "start": "2023",
             "finish": "",
             "company": "UPAMI UNS",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Dicté clases a miembros del PAMI sobre el uso seguro de aplicaciones en smartphones, mejorando su autonomía digital."
+                "Taught classes to PAMI members on the safe use of smartphone applications, improving their digital autonomy."
             ]
-        ]
-    }
+        }
+    ]
 }
