@@ -23,8 +23,6 @@
 \usepackage{xfp}
 \usepackage[utf8]{inputenc}
 
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
 
 %----------FONT OPTIONS----------
@@ -94,12 +92,17 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{ifthen}
+\ifthenelse{\equal{\detokenize{EN}}{\detokenize\expandafter{\jobname}}}
+  {\newcommand{\cvlang}{EN}}
+  {\newcommand{\cvlang}{ES}}
+
 \begin{document}
 \begin{center}
     {\Huge \scshape Bruno Velazquez} \\ \vspace{1pt}
-    Bahía Blanca, Buenos Aires 8000 \\ \vspace{1pt}
+    Bahía Blanca, Buenos Aires, Argentina (8000) \\ \vspace{1pt}
     \small \raisebox{-0.1\height}\faPhone\ 2804-690375
-    \href{mailto:bruno.velazquez@cs.uns.edu.ar}{\raisebox{-0.2\height}\faEnvelope\  \underline{bruno.velazquez@cs.uns.edu.ar}} ~ 
+    \href{mailto:bruno.velazquez@cs.uns.edu.ar}{\raisebox{-0.2\height}\faEnvelope\ \underline{bruno.velazquez@cs.uns.edu.ar}} ~ 
     \href{https://linkedin.com/in/brunovelazquez7/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/brunovelazquez7}}  ~
     \href{https://github.com/brunovelazquez}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/brunovelazquez}}
     \vspace{-8pt}
@@ -107,108 +110,31 @@
 
 
 %-----------EDUCATION-----------
-\section{Educación}
-  \input{|python scripts/education.py}
+  \immediate\write18{python scripts/education.py \cvlang}
+  \input{scripts/out_education.tex}
 
 %-----------EXPERIENCE---------------
-\section{Experiencia}
-  \input{|python scripts/experience.py}
+  \immediate\write18{python scripts/experience.py \cvlang}
+  \input{scripts/out_experience.tex}
 
 %-----------PROJECTS-----------
-\section{Proyectos}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Página web del Coro de la Universidad Nacional del Sur} $|$ \emph{PHP, Wordpress}}{2026}
-          \resumeItemListStart
-            \resumeItem{Modernicé la identidad digital del Coro de la UNS con una nueva página institucional.}
-            \resumeItem{Automaticé la gestión de eventos mediante un administrador de eventos a medida, mejorando la experiencia del usuario final.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+  \immediate\write18{python scripts/projects.py \cvlang}
+  \input{scripts/out_projects.tex}
 
 %------CERTIFICATIONS-------
-\section{Certificaciones}
-  \resumeSubHeadingListStart
-        \resumeSubheading
-        {Introducción al Desarrollo de Software Cuántico}
-        {Agosto 2024}
-        {III Escuela Latinoamericana de Informática (ELI)}
-        {Bahía Blanca, Buenos Aires}
-        % \resumeSubheading
-        % {Introducción a Docker}
-        % {Marzo 2024}
-        % {Escuela de Actualización en Tecnologías de la Informática (EATI)}
-        % {Bahía Blanca, Buenos Aires}
-        % \resumeSubheading
-        % {Acceso a Información Relevante en la Era de los Datos Masivos}
-        % {Octubre 2023}
-        % {XXIX Congreso Argentino de Ciencias de la Computación (CACiC) 2023}
-        % {Luján, Buenos Aires}
-        % \resumeSubheading
-        % {Desarrollo Moderno de Aplicaciones Android: Jetpack}
-        % {Marzo 2023}
-        % {Escuela de Actualización en Tecnologías de la Informática (EATI)}
-        % {Bahía Blanca, Buenos Aires}
-        % \resumeSubheading
-        % {Introducción al Lenguaje de Programación Python}
-        % {Octubre -- Noviembre 2019}
-        % {Departamento de Ingeniería Eléctrica y Computadoras, Universidad Nacional del Sur}
-        % {Bahía Blanca, Buenos Aires}
-        % \resumeSubheading
-        % {Instalador y Soporte de Sistemas Informáticos}
-        % {2019}
-        % {Centro de Formación Profesional (CFP) 401}
-        % {Bahía Blanca, Buenos Aires}
-  \resumeSubHeadingListEnd
+  \immediate\write18{python scripts/certifications.py \cvlang}
+  \input{scripts/out_certifications.tex}
 
 %-----------LEADERSHIP & ACTIVITIES---------------
-\section{Liderazgo y Actividades}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Secretario Segundo y Asambleísta}
-      {2021 -- 2023}
-      {Asamblea Universitaria, Universidad Nacional del Sur}
-      {Bahía Blanca, Buenos Aires}
-
-    \resumeSubheading
-    {Consejero Departamental Suplente}
-    {2022}
-    {Consejo Departamental del Departamento de Ciencias e Ingeniería de la Computación}
-    {Bahía Blanca, Buenos Aires}
-
-    \resumeSubheading
-      {Coordinador de actividades}
-      {Junio 2019 y junio 2022}
-      {Jornadas de Integración de las Ingenierías (JOII)}
-      {Bahía Blanca, Buenos Aires}
-
-    \resumeSubheading
-      {Voluntario - Reparación y mantenimiento de PCs}
-      {2021}
-      {Secretaría General de Cultura y Extensión Universitaria}{Bahía Blanca, Buenos Aires}
-      \resumeItemListStart
-        \resumeItem{
-            Ejecuté tareas de mantenimiento de hardware y software, logrando el reacondicionamiento de computadoras funcionales para su donación a instituciones de la comunidad.
-        }
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+  \immediate\write18{python scripts/leadership.py \cvlang}
+  \input{scripts/out_leadership.tex}
 
 
 %-----------TECHNICAL SKILLS-----------
-\section{Habilidades técnicas}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-        \textbf{Tecnologías/Frameworks}{: Linux, Git/GitHub, Docker, Android Studio, Vue, Laravel, React Native, Expo} \\
-     \textbf{Lenguajes}{: Python, Java, JavaScript, PHP, SQL} \\
-    }}
- \end{itemize}
- \vspace{-16pt}
+  \immediate\write18{python scripts/skills.py \cvlang}
+  \input{scripts/out_skills.tex}
 %-----------LANGUAGES---------------
-\section{Idiomas}
-  \resumeSubHeadingListStart
-    \resumeProjectHeading
-        {\textbf{Italiano} $|$ \emph{A2 - Asociación Dante Alighieri}}{2023}
-    \resumeProjectHeading
-        {\textbf{Inglés} $|$ \emph{First Certificate (B2) - Cambridge English}}{Diciembre 2015}
-  \resumeSubHeadingListEnd
+  \immediate\write18{python scripts/languages.py \cvlang}
+  \input{scripts/out_languages.tex}
 
 \end{document}

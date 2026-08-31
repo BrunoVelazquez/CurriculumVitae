@@ -1,0 +1,66 @@
+{
+    "ES": [
+        {
+            "role": "Secretario Segundo y Asambleísta",
+            "period": "2021 -- 2023",
+            "organization": "Asamblea Universitaria, Universidad Nacional del Sur",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": []
+        },
+        {
+            "role": "Consejero Departamental Suplente",
+            "period": "2022",
+            "organization": "Consejo Departamental del Departamento de Ciencias e Ingeniería de la Computación",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": []
+        },
+        {
+            "role": "Coordinador de actividades",
+            "period": "Junio 2019 y junio 2022",
+            "organization": "Jornadas de Integración de las Ingenierías (JOII)",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": []
+        },
+        {
+            "role": "Voluntario - Reparación y mantenimiento de PCs",
+            "period": "2021",
+            "organization": "Secretaría General de Cultura y Extensión Universitaria",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": [
+                "Ejecuté tareas de mantenimiento de hardware y software, logrando el reacondicionamiento de computadoras funcionales para su donación a instituciones de la comunidad."
+            ]
+        }
+    ],
+    "EN": [
+        {
+            "role": "Second Secretary and Assembly Member",
+            "period": "2021 -- 2023",
+            "organization": "University Assembly, National University of the South",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": []
+        },
+        {
+            "role": "Alternate Departmental Councilor",
+            "period": "2022",
+            "organization": "Departmental Council of the Department of Computer Science and Engineering",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": []
+        },
+        {
+            "role": "Activities Coordinator",
+            "period": "June 2019 and June 2022",
+            "organization": "Engineering Integration Days (JOII)",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": []
+        },
+        {
+            "role": "Volunteer - PC Repair and Maintenance",
+            "period": "2021",
+            "organization": "General Secretariat of Culture and University Extension",
+            "location": "Bahía Blanca, Buenos Aires",
+            "tasks": [
+                "Performed hardware and software maintenance tasks, successfully refurbishing computers for donation to community institutions."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "ES": [
+        {
+            "category": "Tecnologías/Frameworks",
+            "skills": "Linux, Git/GitHub, Docker, Android Studio, Vue, Laravel, React Native, Expo"
+        },
+        {
+            "category": "Lenguajes",
+            "skills": "Python, Java, JavaScript, PHP, SQL"
+        }
+    ],
+    "EN": [
+        {
+            "category": "Technologies/Frameworks",
+            "skills": "Linux, Git/GitHub, Docker, Android Studio, Vue, Laravel, React Native, Expo"
+        },
+        {
+            "category": "Languages",
+            "skills": "Python, Java, JavaScript, PHP, SQL"
+        }
+    ]
+}

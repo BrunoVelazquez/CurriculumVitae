@@ -1,0 +1,18 @@
+{
+    "ES": [
+        {
+            "name": "Introducción al Desarrollo de Software Cuántico",
+            "date": "Agosto 2024",
+            "issuer": "III Escuela Latinoamericana de Informática (ELI)",
+            "location": "Bahía Blanca, Buenos Aires"
+        }
+    ],
+    "EN": [
+        {
+            "name": "Introduction to Quantum Software Development",
+            "date": "August 2024",
+            "issuer": "III Latin American School of Informatics (ELI)",
+            "location": "Bahía Blanca, Buenos Aires"
+        }
+    ]
+}

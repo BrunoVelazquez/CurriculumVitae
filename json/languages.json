@@ -1,0 +1,26 @@
+{
+    "ES": [
+        {
+            "language": "Italiano",
+            "level": "A2 - Asociación Dante Alighieri",
+            "year": "2023"
+        },
+        {
+            "language": "Inglés",
+            "level": "First Certificate (B2) - Cambridge English",
+            "year": "Diciembre 2015"
+        }
+    ],
+    "EN": [
+        {
+            "language": "Italian",
+            "level": "A2 - Dante Alighieri Association",
+            "year": "2023"
+        },
+        {
+            "language": "English",
+            "level": "First Certificate (B2) - Cambridge English",
+            "year": "December 2015"
+        }
+    ]
+}
