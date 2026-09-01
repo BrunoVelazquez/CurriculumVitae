@@ -1,6 +1,11 @@
 {
     "ES": [
         {
+            "language": "Español",
+            "level": "Nativo",
+            "year": ""
+        },
+        {
             "language": "Italiano",
             "level": "A2 - Asociación Dante Alighieri",
             "year": "2023"
@@ -12,6 +17,11 @@
         }
     ],
     "EN": [
+        {
+            "language": "Spanish",
+            "level": "Native",
+            "year": ""
+        },
         {
             "language": "Italian",
             "level": "A2 - Dante Alighieri Association",

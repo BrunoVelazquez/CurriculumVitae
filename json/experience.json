@@ -53,7 +53,7 @@
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
                 "Refactored the main map interface, improving readability and extensibility of its behavior in React Native.",
-                "Developed full-stack the bike registration and release functionality at parking lots with QR codes using Expo libraries, SQL and APIs.",
+                "Engineered a full-stack solution for registering and releasing bikes at parking lots via QR codes, utilizing Expo libraries, SQL, and APIs.",
                 "Continued and completed the full-stack development of a ride-sharing booking and communication feature between passengers and drivers.",
                 "Researched, designed and implemented the first version of legal terms and conditions for the ride-sharing functionality."
             ]

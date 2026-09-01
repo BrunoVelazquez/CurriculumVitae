@@ -15,6 +15,13 @@ with open(json_path, 'r', encoding='utf-8') as f:
 
 entries = data.get(lang, data["ES"])
 
+choices_path = os.path.join(os.path.dirname(__file__), '..', '.build_choices.json')
+if os.path.exists(choices_path):
+    with open(choices_path, 'r', encoding='utf-8') as cf:
+        choices = json.load(cf)
+    if 'skills' in choices:
+        entries = [entries[i] for i in choices['skills'] if i < len(entries)]
+
 section_title = "Habilidades técnicas" if lang == "ES" else "Technical Skills"
 print(rf"\section{{{section_title}}}")
 

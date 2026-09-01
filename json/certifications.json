@@ -5,6 +5,36 @@
             "date": "Agosto 2024",
             "issuer": "III Escuela Latinoamericana de Informática (ELI)",
             "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Introducción a Docker",
+            "date": "Marzo 2024",
+            "issuer": "Escuela de Actualización en Tecnologías de la Informática (EATI)",
+            "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Acceso a Información Relevante en la Era de los Datos Masivos",
+            "date": "Octubre 2023",
+            "issuer": "XXIX Congreso Argentino de Ciencias de la Computación (CACiC) 2023",
+            "location": "Luján, Buenos Aires"
+        },
+        {
+            "name": "Desarrollo Moderno de Aplicaciones Android: Jetpack",
+            "date": "Marzo 2023",
+            "issuer": "Escuela de Actualización en Tecnologías de la Informática (EATI)",
+            "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Introducción al Lenguaje de Programación Python",
+            "date": "Octubre -- Noviembre 2019",
+            "issuer": "Departamento de Ingeniería Eléctrica y Computadoras, Universidad Nacional del Sur",
+            "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Instalador y Soporte de Sistemas Informáticos",
+            "date": "2019",
+            "issuer": "Centro de Formación Profesional (CFP) 401",
+            "location": "Bahía Blanca, Buenos Aires"
         }
     ],
     "EN": [
@@ -12,6 +42,36 @@
             "name": "Introduction to Quantum Software Development",
             "date": "August 2024",
             "issuer": "III Latin American School of Informatics (ELI)",
+            "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Introduction to Docker",
+            "date": "March 2024",
+            "issuer": "School of Update in Information Technologies (EATI)",
+            "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Access to Relevant Information in the Era of Massive Data",
+            "date": "October 2023",
+            "issuer": "XXIX Argentine Congress of Computer Science (CACiC) 2023",
+            "location": "Luján, Buenos Aires"
+        },
+        {
+            "name": "Modern Android App Development: Jetpack",
+            "date": "March 2023",
+            "issuer": "School of Update in Information Technologies (EATI)",
+            "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Introduction to the Python Programming Language",
+            "date": "October -- November 2019",
+            "issuer": "Department of Electrical and Computer Engineering, National University of the South",
+            "location": "Bahía Blanca, Buenos Aires"
+        },
+        {
+            "name": "Computer Systems Installer and Support",
+            "date": "2019",
+            "issuer": "Professional Training Center (CFP) 401",
             "location": "Bahía Blanca, Buenos Aires"
         }
     ]

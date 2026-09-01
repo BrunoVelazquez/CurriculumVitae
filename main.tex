@@ -16,13 +16,14 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage[spanish]{babel}
 \usepackage{tabularx}
 \usepackage{fontawesome5}
 \usepackage{multicol}
 \usepackage{xfp}
 \usepackage[utf8]{inputenc}
-
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
 \input{glyphtounicode}
 
 %----------FONT OPTIONS----------
@@ -40,7 +41,7 @@
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.6in}
 \addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
+\addtolength{\textwidth}{1.2in}
 \addtolength{\topmargin}{-.7in}
 \addtolength{\textheight}{1.4in}
 
@@ -52,8 +53,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-    \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+    \vspace{-5pt}\scshape\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -92,16 +93,15 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{ifthen}
-\ifthenelse{\equal{\detokenize{EN}}{\detokenize\expandafter{\jobname}}}
-  {\newcommand{\cvlang}{EN}}
-  {\newcommand{\cvlang}{ES}}
+\ifdefined\cvlang\else
+  \def\cvlang{ES}
+\fi
 
 \begin{document}
 \begin{center}
     {\Huge \scshape Bruno Velazquez} \\ \vspace{1pt}
     Bahía Blanca, Buenos Aires, Argentina (8000) \\ \vspace{1pt}
-    \small \raisebox{-0.1\height}\faPhone\ 2804-690375
+    \small \raisebox{-0.1\height}\faPhone\ 2804-690375 ~
     \href{mailto:bruno.velazquez@cs.uns.edu.ar}{\raisebox{-0.2\height}\faEnvelope\ \underline{bruno.velazquez@cs.uns.edu.ar}} ~ 
     \href{https://linkedin.com/in/brunovelazquez7/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/brunovelazquez7}}  ~
     \href{https://github.com/brunovelazquez}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/brunovelazquez}}
