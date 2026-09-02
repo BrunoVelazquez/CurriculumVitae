@@ -44,6 +44,9 @@ def interactive_menu(title, items):
                 selected.add(current_idx)
         elif key in (b'\r', b'\n'): # Enter
             break
+        elif key == b'\x1b': # ESC
+            print('\nOperación cancelada.')
+            sys.exit(0)
             
     return sorted(list(selected))
 
