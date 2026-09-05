@@ -7,7 +7,7 @@
             "company": "RocketBeet",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Desarrollé y configuré una estructura de Data Warehouse, utilizando Python, Docker y Google Cloud Run, automatizando la extracción de métricas históricas en el uso de la plataforma."
+                "Implementé un Data Warehouse en Cloud Run y Docker con Python, automatizando la ingesta de métricas de uso y eliminando la extracción manual de datos."
             ]
         },
         {
@@ -17,10 +17,10 @@
             "company": "Plataforma Sustentabilidad Integral",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Refactoricé la interfaz del mapa principal, aumentando su legibilidad y capacidad de extensión de su comportamiento en React Native.",
-                "Desarrollé de forma full-stack la funcionalidad de registro y liberación de bicicletas en estacionamientos con códigos QR utilizando librerías de Expo, SQL y APIs.",
-                "Continué y finalicé el desarrollo full-stack de una funcionalidad de reservas y comunicación entre pasajeros y conductores para viajes compartidos.",
-                "Investigué, diseñé e implementé la primera versión de términos y condiciones legales de uso para la funcionalidad de viajes compartidos."
+                "Modularicé el mapa interactivo en React Native, desacoplando la lógica de la UI para optimizar renderizado y escalabilidad.",
+                "Desarrollé el sistema full-stack de registro y liberación de bicicletas mediante códigos QR (Expo, SQL y APIs), agilizando el flujo del usuario.",
+                "Continué y finalicé la entrega full-stack del módulo de reservas y comunicación entre pasajeros y conductores.",
+                "Definí e integré los términos legales y políticas de uso de viajes compartidos, asegurando el marco regulatorio del servicio."
             ]
         },
         {
@@ -30,7 +30,7 @@
             "company": "UPAMI UNS",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Dicté clases a miembros del PAMI sobre el uso seguro de aplicaciones en smartphones, mejorando su autonomía digital."
+                "Capacité a adultos mayores de PAMI sobre el uso de apps móviles, mejorando su autonomía digital."
             ]
         }
     ],
@@ -42,7 +42,7 @@
             "company": "RocketBeet",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Developed and configured a Data Warehouse structure using Python, Docker and Google Cloud Run, automating the extraction of historical metrics on platform usage."
+                "Built a Data Warehouse on Cloud Run and Docker with Python, automating usage metric ingestion and eliminating manual reporting workflows."
             ]
         },
         {
@@ -52,10 +52,10 @@
             "company": "Plataforma Sustentabilidad Integral",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Refactored the main map interface, improving readability and extensibility of its behavior in React Native.",
-                "Engineered a full-stack solution for registering and releasing bikes at parking lots via QR codes, utilizing Expo libraries, SQL, and APIs.",
-                "Continued and completed the full-stack development of a ride-sharing booking and communication feature between passengers and drivers.",
-                "Researched, designed and implemented the first version of legal terms and conditions for the ride-sharing functionality."
+                "Modularized the interactive React Native map, decoupling UI logic to optimize rendering performance and scalability.",
+                "Engineered the end-to-end QR code bike check-in/checkout system with Expo, SQL, and APIs, streamlining user station access.",
+                "Completed the full-stack delivery of the booking and passenger-driver communication module.",
+                "Defined and integrated terms of service for ride-sharing, establishing regulatory compliance for product launch."
             ]
         },
         {
@@ -65,7 +65,7 @@
             "company": "UPAMI UNS",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Taught classes to PAMI members on the safe use of smartphone applications, improving their digital autonomy."
+                "Trained senior citizens in smartphone usage, enhancing digital autonomy."
             ]
         }
     ]
