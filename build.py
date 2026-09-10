@@ -125,12 +125,18 @@ def main():
         
     # Compilar
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(f"Compilando documento ({lang}.pdf) con tu selección...")
-    cmd = rf'pdflatex -shell-escape -jobname="CV-BrunoVelazquez" "\def\cvlang{{{lang}}}\input{{main.tex}}"'
+    print(f"Generando secciones en {lang}...")
+    for sec_name, _ in sections:
+        script_path = os.path.join(base_dir, 'scripts', f"{sec_name}.py")
+        if os.path.exists(script_path):
+            subprocess.run([sys.executable, script_path, lang], check=True)
+            
+    print(f"Compilando documento (CV-BrunoVelazquez_{lang}.pdf) con tu selección...")
+    cmd = rf'pdflatex -shell-escape -jobname="CV-BrunoVelazquez_{lang}" "\def\cvlang{{{lang}}}\input{{main.tex}}"'
     
     try:
         subprocess.run(cmd, shell=True, check=True)
-        print(f"\n¡CV compilado exitosamente! Revisa el archivo {lang}.pdf")
+        print(f"\n¡CV compilado exitosamente! Revisa el archivo CV-BrunoVelazquez_{lang}.pdf")
     except subprocess.CalledProcessError:
         print("\nHubo un error al compilar el PDF. Revisa los logs.")
     finally:
