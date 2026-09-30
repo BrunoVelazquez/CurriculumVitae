@@ -5,7 +5,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -108,6 +108,10 @@
     \vspace{-8pt}
 \end{center}
 
+
+%-----------PROFILE-----------
+  \immediate\write18{python scripts/profile.py \cvlang}
+  \input{scripts/out_profile.tex}
 
 %-----------EDUCATION-----------
   \input{scripts/out_education.tex}

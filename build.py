@@ -126,6 +126,12 @@ def main():
     # Compilar
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"Generando secciones en {lang}...")
+    
+    # Generar perfil profesional (no es una lista, así que va fuera del menú interactivo)
+    profile_script = os.path.join(base_dir, 'scripts', 'profile.py')
+    if os.path.exists(profile_script):
+        subprocess.run([sys.executable, profile_script, lang], check=True)
+        
     for sec_name, _ in sections:
         script_path = os.path.join(base_dir, 'scripts', f"{sec_name}.py")
         if os.path.exists(script_path):
