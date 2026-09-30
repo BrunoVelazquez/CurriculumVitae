@@ -3,11 +3,36 @@ import os
 import sys
 import subprocess
 
-try:
-    import msvcrt
-except ImportError:
-    print("Este script interactivo requiere Windows (msvcrt).")
-    sys.exit(1)
+def get_key():
+    if os.name == 'nt':
+        import msvcrt
+        key = msvcrt.getch()
+        if key in (b'\xe0', b'\x00'):
+            key = msvcrt.getch()
+            if key == b'H': return 'UP'
+            if key == b'P': return 'DOWN'
+            return None
+        elif key in (b'\r', b'\n'): return 'ENTER'
+        elif key == b' ': return 'SPACE'
+        elif key == b'\x1b': return 'ESC'
+        return key.decode('utf-8', 'ignore')
+    else:
+        import tty, termios
+        fd = sys.stdin.fileno()
+        old_settings = termios.tcgetattr(fd)
+        try:
+            tty.setraw(fd)
+            # Leer directamente del OS para evitar que Python fragmente las secuencias de escape
+            b = os.read(fd, 3)
+            if b == b'\x1b[A': return 'UP'
+            elif b == b'\x1b[B': return 'DOWN'
+            elif b == b'\x1b': return 'ESC'
+            elif b in (b'\r', b'\n'): return 'ENTER'
+            elif b == b' ': return 'SPACE'
+            elif b == b'\x03': return 'ESC' # Ctrl+C
+            return b.decode('utf-8', 'ignore')
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
 def interactive_menu(title, items):
     if not items:
@@ -17,7 +42,7 @@ def interactive_menu(title, items):
     current_idx = 0
     
     while True:
-        # Limpiar consola (funciona en cmd y PowerShell)
+        # Limpiar consola (funciona en cmd y PowerShell y terminales unix)
         os.system('cls' if os.name == 'nt' else 'clear')
         
         print(f"--- Sección: {title.upper()} ---")
@@ -28,23 +53,20 @@ def interactive_menu(title, items):
             check = "(*)" if i in selected else "( )"
             print(f" {pointer} {check} {item}")
             
-        key = msvcrt.getch()
+        key = get_key()
         
-        # Flechas en Windows devuelven 2 bytes: \xe0 o \x00, seguido del código
-        if key in (b'\xe0', b'\x00'):
-            key = msvcrt.getch()
-            if key == b'H': # Flecha arriba
-                current_idx = (current_idx - 1) % len(items)
-            elif key == b'P': # Flecha abajo
-                current_idx = (current_idx + 1) % len(items)
-        elif key == b' ': # Espacio
+        if key == 'UP':
+            current_idx = (current_idx - 1) % len(items)
+        elif key == 'DOWN':
+            current_idx = (current_idx + 1) % len(items)
+        elif key == 'SPACE':
             if current_idx in selected:
                 selected.remove(current_idx)
             else:
                 selected.add(current_idx)
-        elif key in (b'\r', b'\n'): # Enter
+        elif key == 'ENTER':
             break
-        elif key == b'\x1b': # ESC
+        elif key == 'ESC':
             print('\nOperación cancelada.')
             sys.exit(0)
             
@@ -103,12 +125,18 @@ def main():
         
     # Compilar
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(f"Compilando documento ({lang}.pdf) con tu selección...")
-    cmd = rf'pdflatex -shell-escape -jobname="CV-BrunoVelazquez" "\def\cvlang{{{lang}}}\input{{main.tex}}"'
+    print(f"Generando secciones en {lang}...")
+    for sec_name, _ in sections:
+        script_path = os.path.join(base_dir, 'scripts', f"{sec_name}.py")
+        if os.path.exists(script_path):
+            subprocess.run([sys.executable, script_path, lang], check=True)
+            
+    print(f"Compilando documento (CV-BrunoVelazquez_{lang}.pdf) con tu selección...")
+    cmd = rf'pdflatex -shell-escape -jobname="CV-BrunoVelazquez_{lang}" "\def\cvlang{{{lang}}}\input{{main.tex}}"'
     
     try:
         subprocess.run(cmd, shell=True, check=True)
-        print(f"\n¡CV compilado exitosamente! Revisa el archivo {lang}.pdf")
+        print(f"\n¡CV compilado exitosamente! Revisa el archivo CV-BrunoVelazquez_{lang}.pdf")
     except subprocess.CalledProcessError:
         print("\nHubo un error al compilar el PDF. Revisa los logs.")
     finally:
