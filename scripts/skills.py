@@ -31,7 +31,7 @@ print(r"    \small{\item{")
 for entry in entries:
     category = entry["category"]
     skills = entry["skills"]
-    print(rf"        \textbf{{{category}}}{{: {skills}}} \\")
+    print(rf"        \textbf{{{category}}}: \\ {skills} \\")
 
 print(r"    }}")
 print(r" \end{itemize}")

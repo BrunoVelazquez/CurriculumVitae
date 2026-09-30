@@ -130,11 +130,16 @@
   \input{scripts/out_leadership.tex}
 
 
+\begin{minipage}[t]{0.48\textwidth}
 %-----------TECHNICAL SKILLS-----------
   \immediate\write18{python scripts/skills.py \cvlang}
   \input{scripts/out_skills.tex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
 %-----------LANGUAGES---------------
   \immediate\write18{python scripts/languages.py \cvlang}
   \input{scripts/out_languages.tex}
+\end{minipage}
 
 \end{document}
