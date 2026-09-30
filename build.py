@@ -95,28 +95,42 @@ def main():
     choices = {}
     base_dir = os.path.dirname(os.path.abspath(__file__))
     json_dir = os.path.join(base_dir, 'json')
+    last_choices_path = os.path.join(base_dir, 'last_choices.json')
     
-    for sec_name, display_key in sections:
-        json_path = os.path.join(json_dir, f"{sec_name}.json")
-        if not os.path.exists(json_path):
-            continue
-            
-        with open(json_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            
-        entries = data.get(lang, [])
-        if not entries:
-            continue
-            
-        display_items = []
-        for i, item in enumerate(entries):
-            if callable(display_key):
-                display_items.append(display_key(item))
-            else:
-                display_items.append(item.get(display_key, f"Item {i+1}"))
+    use_last = False
+    if os.path.exists(last_choices_path):
+        resp = input("¿Quieres usar la última configuración guardada? (S/N) [por defecto: N]: ").strip().upper()
+        if resp == 'S':
+            use_last = True
+            with open(last_choices_path, 'r', encoding='utf-8') as f:
+                choices = json.load(f)
                 
-        selected_indices = interactive_menu(sec_name, display_items)
-        choices[sec_name] = selected_indices
+    if not use_last:
+        for sec_name, display_key in sections:
+            json_path = os.path.join(json_dir, f"{sec_name}.json")
+            if not os.path.exists(json_path):
+                continue
+                
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                
+            entries = data.get(lang, [])
+            if not entries:
+                continue
+                
+            display_items = []
+            for i, item in enumerate(entries):
+                if callable(display_key):
+                    display_items.append(display_key(item))
+                else:
+                    display_items.append(item.get(display_key, f"Item {i+1}"))
+                    
+            selected_indices = interactive_menu(sec_name, display_items)
+            choices[sec_name] = selected_indices
+            
+        # Guardar la nueva configuración
+        with open(last_choices_path, 'w', encoding='utf-8') as f:
+            json.dump(choices, f)
         
     # Guardar opciones temporalmente
     choices_path = os.path.join(base_dir, '.build_choices.json')
