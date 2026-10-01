@@ -1,22 +1,38 @@
 {
     "ES": [
         {
-            "category": "Tecnologías/Frameworks",
-            "skills": "Linux, Git/GitHub, Docker, Android Studio, Vue, Laravel, React Native, Expo"
+            "category": "Backend",
+            "skills": "Python, REST APIs, SQL, PostgreSQL, ETL/Pipelines, Django, Laravel"
+        },
+        {
+            "category": "DevOps / Cloud",
+            "skills": "Docker, GCP Cloud Run, Linux, Git/GitHub, CI/CD (GitHub Actions)"
+        },
+        {
+            "category": "Frontend / Mobile",
+            "skills": "React Native, Expo, Vue, JavaScript, PHP"
         },
         {
             "category": "Lenguajes",
-            "skills": "Python, Java, JavaScript, PHP, SQL"
+            "skills": "Python, JavaScript, Java, PHP, SQL"
         }
     ],
     "EN": [
         {
-            "category": "Technologies/Frameworks",
-            "skills": "Linux, Git/GitHub, Docker, Android Studio, Vue, Laravel, React Native, Expo"
+            "category": "Backend",
+            "skills": "Python, REST APIs, SQL, PostgreSQL, ETL/Pipelines, Django, Laravel"
+        },
+        {
+            "category": "DevOps / Cloud",
+            "skills": "Docker, GCP Cloud Run, Linux, Git/GitHub, CI/CD (GitHub Actions)"
+        },
+        {
+            "category": "Frontend / Mobile",
+            "skills": "React Native, Expo, Vue, JavaScript, PHP"
         },
         {
             "category": "Languages",
-            "skills": "Python, Java, JavaScript, PHP, SQL"
+            "skills": "Python, JavaScript, Java, PHP, SQL"
         }
     ]
 }

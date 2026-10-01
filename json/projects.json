@@ -2,20 +2,20 @@
     "ES": [
         {
             "title": "Página web del Coro de la Universidad Nacional del Sur",
-            "tech": "PHP, Wordpress \\href{http://coro.uns.edu.ar/}{\\underline{(coro.uns.edu.ar)}}",
+            "tech": "PHP, WordPress \\href{http://coro.uns.edu.ar/}{\\underline{(coro.uns.edu.ar)}}",
             "year": "2026",
             "tasks": [
-                "Diseñé y desplegué el portal web institucional del coro, modernizando su identidad digital."
+                "Rediseñé y modernizé el portal web institucional con PHP/WordPress, renovando la identidad digital de una organización de 50+ integrantes."
             ]
         }
     ],
     "EN": [
         {
             "title": "National University of the South Choir Website",
-            "tech": "PHP, Wordpress \\href{http://coro.uns.edu.ar/}{\\underline{(coro.uns.edu.ar)}}",
+            "tech": "PHP, WordPress \\href{http://coro.uns.edu.ar/}{\\underline{(coro.uns.edu.ar)}}",
             "year": "2026",
             "tasks": [
-                "Designed and deployed the institutional choir web portal, modernizing its digital identity."
+                "Redesigned and modernized the institutional web portal using PHP/WordPress, refreshing the digital identity of a 50+ member organization."
             ]
         }
     ]

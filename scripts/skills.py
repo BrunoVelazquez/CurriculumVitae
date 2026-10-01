@@ -25,14 +25,20 @@ if os.path.exists(choices_path):
 section_title = "Habilidades técnicas" if lang == "ES" else "Technical Skills"
 print(rf"\section{{{section_title}}}")
 
-print(r" \begin{itemize}[leftmargin=0.15in, label={}]")
-print(r"    \small{\item{")
+print(r"\begin{tabular*}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.46\textwidth}@{\hspace{0.08\textwidth}}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}")
+print(r"  \small")
 
-for entry in entries:
-    category = entry["category"]
-    skills = entry["skills"]
-    print(rf"        \textbf{{{category}}}: \\ {skills} \\")
+# Pair entries two per row
+for i in range(0, len(entries), 2):
+    left = entries[i]
+    left_cell = rf"\textbf{{{left['category']}}}: {left['skills']}"
+    if i + 1 < len(entries):
+        right = entries[i + 1]
+        right_cell = rf"\textbf{{{right['category']}}}: {right['skills']}"
+    else:
+        right_cell = ""
+    print(rf"  {left_cell} & {right_cell} \\[2pt]")
 
-print(r"    }}")
-print(r" \end{itemize}")
-print(r" \vspace{-16pt}")
+print(r"\end{tabular*}")
+print(r"\vspace{-10pt}")
+
