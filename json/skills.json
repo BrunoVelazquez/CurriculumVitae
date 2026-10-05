@@ -14,7 +14,7 @@
         },
         {
             "category": "Lenguajes",
-            "skills": "Python, JavaScript, Java, PHP, SQL"
+            "skills": "Python, JavaScript, Java, PHP, SQL, Tipado Fuerte"
         }
     ],
     "EN": [
@@ -32,7 +32,7 @@
         },
         {
             "category": "Languages",
-            "skills": "Python, JavaScript, Java, PHP, SQL"
+            "skills": "Python, JavaScript, Java (Strongly Typed), PHP, SQL"
         }
     ]
 }

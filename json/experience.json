@@ -42,7 +42,7 @@
             "company": "RocketBeet",
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
-                "Designed and shipped an end-to-end ETL pipeline on GCP Cloud Run + Docker (Python), eliminating 100% of manual metric ingestion work for the product team.",
+                "Designed and shipped an end-to-end ETL pipeline on GCP Cloud Run + Docker (Python), eliminating 100\\% of manual metric ingestion work for the product team.",
                 "Automated ingestion and transformation of structured data, replacing recurring manual reports and enabling real-time data availability."
             ]
         },
