@@ -6,14 +6,14 @@
             "year": ""
         },
         {
-            "language": "Italiano",
-            "level": "A2 - Asociación Dante Alighieri",
-            "year": "2023"
-        },
-        {
             "language": "Inglés",
             "level": "B2 - Cambridge English",
             "year": "2015"
+        },
+        {
+            "language": "Italiano",
+            "level": "A2 - Asociación Dante Alighieri",
+            "year": "2023"
         }
     ],
     "EN": [
@@ -23,14 +23,14 @@
             "year": ""
         },
         {
-            "language": "Italian",
-            "level": "A2 - Dante Alighieri Association",
-            "year": "2023"
-        },
-        {
             "language": "English",
             "level": "B2 - Cambridge English",
             "year": "2015"
+        },
+        {
+            "language": "Italian",
+            "level": "A2 - Dante Alighieri Association",
+            "year": "2023"
         }
     ]
 }

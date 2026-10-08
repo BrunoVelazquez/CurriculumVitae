@@ -9,7 +9,8 @@
             "tasks": [
                 "Diseñé e implementé un pipeline ETL de extremo a extremo en GCP Cloud Run + Docker (Python), reduciendo a 0 el trabajo manual de ingesta de métricas de uso para el equipo de producto.",
                 "Automaticé la ingesta y transformación de datos estructurados, eliminando reportes manuales recurrentes y mejorando la disponibilidad de información en tiempo real."
-            ]
+            ],
+            "description": "Modernización de la infraestructura de datos para el equipo de producto mediante el diseño y orquestación de procesos ETL en la nube."
         },
         {
             "role": "Fullstack Developer — Práctica Profesional",
@@ -21,7 +22,8 @@
                 "Refactoricé el módulo de mapa interactivo en React Native desacoplando UI de lógica de negocio, mejorando el rendimiento de renderizado y habilitando extensiones sin deuda técnica.",
                 "Desarrollé de punta a punta el sistema de check-in/checkout por QR (Expo, REST API, SQL), reduciendo la fricción de acceso a estaciones de bicicletas compartidas.",
                 "Entregué el módulo de reservas pasajero-conductor, cerrando el sprint final y habilitando el lanzamiento a producción del producto."
-            ]
+            ],
+            "description": "Desarrollo end-to-end de nuevas funcionalidades para la aplicación móvil principal y su backend, asegurando un lanzamiento exitoso y escalable."
         },
         {
             "role": "Docente — Alfabetización Digital",
@@ -31,7 +33,8 @@
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
                 "Diseñé y dicté talleres de tecnología para adultos mayores de PAMI, logrando que 20+ participantes usaran apps móviles de forma autónoma."
-            ]
+            ],
+            "description": "Facilitador de cursos de inclusión tecnológica para adultos mayores enfocado en reducir la brecha digital."
         }
     ],
     "EN": [
@@ -44,7 +47,8 @@
             "tasks": [
                 "Designed and shipped an end-to-end ETL pipeline on GCP Cloud Run + Docker (Python), eliminating 100\\% of manual metric ingestion work for the product team.",
                 "Automated ingestion and transformation of structured data, replacing recurring manual reports and enabling real-time data availability."
-            ]
+            ],
+            "description": "Modernization of data infrastructure for the product team through the design and orchestration of cloud ETL processes."
         },
         {
             "role": "Fullstack Developer — Professional Practice",
@@ -56,7 +60,8 @@
                 "Refactored the interactive React Native map module by decoupling UI from business logic, improving rendering performance and enabling future extensions without technical debt.",
                 "Built the end-to-end QR code check-in/checkout system (Expo, REST API, SQL), streamlining user access to shared bicycle stations.",
                 "Delivered the passenger-driver booking module, closing the final sprint and enabling the product's production launch."
-            ]
+            ],
+            "description": "End-to-end development of new features for the core mobile application and its backend, ensuring a successful and scalable launch."
         },
         {
             "role": "Teacher — Digital Literacy",
@@ -66,7 +71,8 @@
             "place": "Bahía Blanca, Buenos Aires, Argentina",
             "tasks": [
                 "Designed and delivered technology workshops for senior citizens, enabling 20+ participants to independently use mobile apps."
-            ]
+            ],
+            "description": "Facilitator of technology inclusion courses for older adults, focused on bridging the digital divide."
         }
     ]
 }
