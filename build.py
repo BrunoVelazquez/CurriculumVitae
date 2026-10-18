@@ -34,6 +34,37 @@ def get_key():
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
+def single_select_menu(title, items, default_idx=0):
+    if not items:
+        return None
+    
+    current_idx = default_idx if 0 <= default_idx < len(items) else 0
+    
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+        print(f"--- Selección: {title.upper()} ---")
+        print("Usa FLECHA ARRIBA/ABAJO para mover, ENTER para confirmar.\n")
+        
+        for i, item in enumerate(items):
+            pointer = ">" if i == current_idx else " "
+            check = "(*)" if i == current_idx else "( )"
+            print(f" {pointer} {check} {item}")
+            
+        key = get_key()
+        
+        if key == 'UP':
+            current_idx = (current_idx - 1) % len(items)
+        elif key == 'DOWN':
+            current_idx = (current_idx + 1) % len(items)
+        elif key == 'ENTER':
+            break
+        elif key == 'ESC':
+            print('\nOperación cancelada.')
+            sys.exit(0)
+            
+    return items[current_idx]
+
 def interactive_menu(title, items):
     if not items:
         return []
@@ -106,6 +137,21 @@ def main():
                 choices = json.load(f)
                 
     if not use_last:
+        # Selección de perfil profesional por rol
+        profile_json_path = os.path.join(json_dir, "profile.json")
+        if os.path.exists(profile_json_path):
+            with open(profile_json_path, 'r', encoding='utf-8') as pf:
+                profile_data = json.load(pf)
+            # Solo si contiene roles (es decir, las claves no son directamente 'ES'/'EN')
+            if "ES" not in profile_data and "EN" not in profile_data:
+                roles = list(profile_data.keys())
+                if roles:
+                    default_role_idx = 0
+                    if "profile" in choices and choices["profile"] in roles:
+                        default_role_idx = roles.index(choices["profile"])
+                    selected_role = single_select_menu("Perfil Profesional", roles, default_role_idx)
+                    choices["profile"] = selected_role
+
         for sec_name, display_key in sections:
             json_path = os.path.join(json_dir, f"{sec_name}.json")
             if not os.path.exists(json_path):
@@ -151,17 +197,42 @@ def main():
         if os.path.exists(script_path):
             subprocess.run([sys.executable, script_path, lang], check=True)
             
-    print(f"Compilando documento (CV-BrunoVelazquez_{lang}.pdf) con tu selección...")
-    cmd = rf'pdflatex -shell-escape -jobname="CV-BrunoVelazquez_{lang}" "\def\cvlang{{{lang}}}\input{{main.tex}}"'
+    # Determinar el nombre del rol para el archivo
+    selected_role = choices.get("profile")
+    if not selected_role:
+        # Fallback si no está en choices
+        profile_json_path = os.path.join(json_dir, "profile.json")
+        if os.path.exists(profile_json_path):
+            with open(profile_json_path, 'r', encoding='utf-8') as pf:
+                pdata = json.load(pf)
+            selected_role = next(iter(pdata.keys()), "General")
+        else:
+            selected_role = "General"
+
+    role_clean = "".join(selected_role.split())
+    job_name = f"CV_BrunoVelazquez_{role_clean}_{lang}"
+
+    print(f"Compilando documento ({job_name}.pdf) con tu selección...")
+    cmd = rf'pdflatex -shell-escape -jobname="{job_name}" "\def\cvlang{{{lang}}}\input{{main.tex}}"'
     
     try:
         subprocess.run(cmd, shell=True, check=True)
-        print(f"\n¡CV compilado exitosamente! Revisa el archivo CV-BrunoVelazquez_{lang}.pdf")
+        print(f"\n¡CV compilado exitosamente! Revisa el archivo {job_name}.pdf")
     except subprocess.CalledProcessError:
         print("\nHubo un error al compilar el PDF. Revisa los logs.")
     finally:
         if os.path.exists(choices_path):
             os.remove(choices_path)
+
+        # Limpiar archivos temporales de compilación de LaTeX
+        temp_extensions = ['.aux', '.log', '.out', '.fls', '.fdb_latexmk', '.synctex.gz']
+        for ext in temp_extensions:
+            temp_file = os.path.join(base_dir, f"{job_name}{ext}")
+            if os.path.exists(temp_file):
+                try:
+                    os.remove(temp_file)
+                except OSError:
+                    pass
 
 if __name__ == "__main__":
     main()
