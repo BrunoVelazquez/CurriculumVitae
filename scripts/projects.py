@@ -1,3 +1,21 @@
+"""
+scripts/projects.py - Generador del fragmento LaTeX para la sección de Proyectos.
+
+Funcionalidad:
+    Carga los proyectos desde `json/projects.json` según el idioma configurado.
+    Filtra los proyectos seleccionados en `.build_choices.json` (si existe).
+    Genera el formato en LaTeX mediante `\resumeProjectHeading` especificando
+    nombre del proyecto, stack tecnológico, año y lista de características/tareas (`\resumeItem`).
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/projects.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'projects' con lista de índices).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_projects.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os

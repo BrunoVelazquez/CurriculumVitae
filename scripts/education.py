@@ -1,3 +1,21 @@
+"""
+scripts/education.py - Generador del fragmento LaTeX para la sección de Educación.
+
+Funcionalidad:
+    Carga el historial educativo desde `json/education.json` según el idioma configurado.
+    Filtra los títulos e instituciones académicas según los índices guardados en
+    `.build_choices.json` (si existe). Genera el bloque de LaTeX usando las macros
+    `\resumeSubHeadingListStart` y `\resumeSubheading`.
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/education.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'education' con lista de índices).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_education.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os

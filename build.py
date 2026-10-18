@@ -1,9 +1,45 @@
+"""
+build.py - Orquestador y constructor interactivo de Curriculum Vitae en LaTeX.
+
+Funcionalidad:
+    Permite configurar y compilar de manera interactiva el CV en formato PDF.
+    Ofrece selección de idioma (ES/EN), selección del perfil/rol profesional deseado,
+    y selección múltiple de los ítems a incluir para cada sección (educación, experiencia,
+    habilidades, etc.). Invoca los scripts generadores de cada sección en `scripts/`
+    y finalmente compila el documento principal LaTeX (`main.tex`) usando `pdflatex`.
+
+Inputs:
+    - Interacción por consola / teclado: Selección de idioma, selección de rol y marcado
+      de ítems mediante menús interactivos por terminal.
+    - Archivos JSON de datos: `json/*.json` (profile.json, education.json, experience.json, etc.).
+    - Archivo de configuración previa (opcional): `last_choices.json`.
+
+Outputs:
+    - Archivo temporal `.build_choices.json` (eliminado al finalizar la compilación).
+    - Archivo `last_choices.json`: Guarda la última configuración seleccionada para reutilizarla.
+    - Archivos TeX generados por los scripts auxiliares: `scripts/out_*.tex`.
+    - Documento final compilado: `CV_BrunoVelazquez_<Rol>_<Idioma>.pdf`.
+"""
+
 import json
 import os
 import sys
 import subprocess
 
 def get_key():
+    """
+    Captura una única pulsación de tecla de forma síncrona y multiplataforma (Windows y Unix/Linux).
+
+    Funcionalidad:
+        Lee la entrada estándar en modo crudo (raw) para capturar teclas especiales como
+        flechas de navegación (ARRIBA, ABAJO), ENTER, ESPACIO y ESC sin requerir presionar ENTER.
+
+    Inputs:
+        Ninguno (lee desde `sys.stdin` / `msvcrt`).
+
+    Outputs:
+        str | None: Identificador de la tecla ('UP', 'DOWN', 'ENTER', 'SPACE', 'ESC') o el carácter leído.
+    """
     if os.name == 'nt':
         import msvcrt
         key = msvcrt.getch()
@@ -35,6 +71,21 @@ def get_key():
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
 def single_select_menu(title, items, default_idx=0):
+    """
+    Despliega un menú interactivo en consola para seleccionar una única opción (radio button).
+
+    Funcionalidad:
+        Muestra la lista de opciones navegable con flechas arriba/abajo y confirma con ENTER.
+        Permite cancelar con la tecla ESC.
+
+    Inputs:
+        title (str): Título o nombre de la sección a mostrar en el encabezado.
+        items (list[str]): Opciones disponibles para seleccionar.
+        default_idx (int): Índice inicialmente enfocado y seleccionado.
+
+    Outputs:
+        str | None: El elemento seleccionado o None si la lista está vacía.
+    """
     if not items:
         return None
     
@@ -66,6 +117,20 @@ def single_select_menu(title, items, default_idx=0):
     return items[current_idx]
 
 def interactive_menu(title, items):
+    """
+    Despliega un menú interactivo en consola para selección múltiple con casillas (checkboxes).
+
+    Funcionalidad:
+        Permite navegar con las flechas, marcar/desmarcar elementos individuales con la barra ESPACIO,
+        y confirmar la selección total presionando ENTER.
+
+    Inputs:
+        title (str): Nombre de la sección a mostrar en pantalla.
+        items (list[str]): Lista descriptiva de los elementos disponibles.
+
+    Outputs:
+        list[int]: Lista ordenada de índices de los ítems seleccionados.
+    """
     if not items:
         return []
     
@@ -104,6 +169,29 @@ def interactive_menu(title, items):
     return sorted(list(selected))
 
 def main():
+    """
+    Punto de entrada principal del orquestador de construcción.
+
+    Funcionalidad:
+        1. Solicita idioma al usuario (ES/EN).
+        2. Permite reanudar la selección previa guardada en `last_choices.json` o realizar una nueva.
+        3. Permite elegir el perfil profesional objetivo según `json/profile.json`.
+        4. Itera sobre cada sección del CV ejecutando el menú de selección múltiple.
+        5. Guarda las elecciones en `.build_choices.json` y `last_choices.json`.
+        6. Ejecuta secuencialmente los scripts de `scripts/*.py` pasando el idioma como argumento.
+        7. Invoca `pdflatex` para compilar `main.tex` generando el PDF final.
+        8. Limpia los archivos temporales de compilación generados por LaTeX.
+
+    Inputs:
+        - Respuestas interactivas del usuario por consola (idioma, confirmaciones, selecciones de menú).
+        - Archivos de datos `json/*.json`.
+        - Archivo `last_choices.json` si existe.
+
+    Outputs:
+        - Archivos intermedios `scripts/out_*.tex`.
+        - Archivo de configuración persistente `last_choices.json`.
+        - Archivo PDF resultante `CV_BrunoVelazquez_<Rol>_<Idioma>.pdf`.
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
     print("=== Generador interactivo de CV ===\n")
     

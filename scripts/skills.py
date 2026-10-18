@@ -1,3 +1,21 @@
+"""
+scripts/skills.py - Generador del fragmento LaTeX para la sección de Habilidades Técnicas.
+
+Funcionalidad:
+    Carga las categorías y tecnologías desde `json/skills.json` según el idioma.
+    Aplica el filtro de categorías seleccionadas en `.build_choices.json` (si existe).
+    Formatea las habilidades agrupándolas en una tabla de dos columnas (`tabular*`)
+    para optimizar el espacio vertical del CV.
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/skills.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'skills' con lista de índices).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_skills.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os

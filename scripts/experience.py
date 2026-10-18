@@ -1,3 +1,21 @@
+"""
+scripts/experience.py - Generador del fragmento LaTeX para la sección de Experiencia Laboral.
+
+Funcionalidad:
+    Carga la experiencia laboral desde `json/experience.json` según el idioma seleccionado.
+    Filtra los puestos de trabajo según los índices especificados en `.build_choices.json`
+    (si existe). Genera el bloque de LaTeX usando los comandos de formato `\resumeSubheading`
+    y viñetas de tareas/logros `\resumeItem`.
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/experience.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'experience' con lista de índices).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_experience.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os

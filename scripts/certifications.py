@@ -1,3 +1,21 @@
+"""
+scripts/certifications.py - Generador del fragmento LaTeX para la sección de Certificaciones.
+
+Funcionalidad:
+    Carga las certificaciones desde `json/certifications.json` según el idioma configurado.
+    Filtra las certificaciones marcadas en `.build_choices.json` (si existe).
+    Genera el formato en LaTeX usando las macros `\resumeSubHeadingListStart` y `\resumeSubheading`
+    mostrando nombre, fecha de expedición, entidad emisora y ubicación.
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/certifications.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'certifications' con lista de índices).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_certifications.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os

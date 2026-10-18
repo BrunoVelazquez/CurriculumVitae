@@ -1,3 +1,22 @@
+"""
+scripts/profile.py - Generador del fragmento LaTeX para la sección de Perfil Profesional.
+
+Funcionalidad:
+    Lee la información de perfiles desde `json/profile.json`. Si existe el archivo
+    de configuración `.build_choices.json` con un rol seleccionado ('profile'), utiliza
+    dicho perfil; en caso contrario, ofrece retrocompatibilidad o toma el primer rol
+    disponible. Genera el código LaTeX correspondiente con el título de sección
+    traducido y el texto del perfil.
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/profile.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'profile' indicando el rol elegido).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_profile.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os

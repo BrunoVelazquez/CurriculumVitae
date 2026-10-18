@@ -1,3 +1,20 @@
+"""
+scripts/languages.py - Generador del fragmento LaTeX para la sección de Idiomas.
+
+Funcionalidad:
+    Carga los idiomas y niveles de dominio desde `json/languages.json` según el idioma configurado.
+    Filtra los idiomas marcados en `.build_choices.json` (si existe).
+    Genera el formato en LaTeX usando `\resumeProjectHeading` indicando idioma, nivel y año/detalle.
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/languages.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'languages' con lista de índices).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_languages.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os

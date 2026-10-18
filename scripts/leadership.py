@@ -1,3 +1,21 @@
+"""
+scripts/leadership.py - Generador del fragmento LaTeX para la sección de Liderazgo y Actividades.
+
+Funcionalidad:
+    Carga las actividades de liderazgo desde `json/leadership.json` según el idioma configurado.
+    Filtra las actividades marcadas en `.build_choices.json` (si existe).
+    Genera el formato en LaTeX mediante `\resumeSubHeadingListStart`, `\resumeSubheading`
+    y viñetas descriptivas `\resumeItem`.
+
+Inputs:
+    - Argumentos CLI: `sys.argv[1]` opcional indicando el idioma ("ES" por defecto o "EN").
+    - Archivo de datos: `../json/leadership.json`.
+    - Archivo de opciones: `../.build_choices.json` (clave 'leadership' con lista de índices).
+
+Outputs:
+    - Archivo LaTeX generado: `scripts/out_leadership.tex` (redirigiendo `sys.stdout`).
+"""
+
 import json
 import sys
 import os
