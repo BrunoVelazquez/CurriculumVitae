@@ -40,6 +40,9 @@ if os.path.exists(choices_path):
     if 'skills' in choices:
         entries = [entries[i] for i in choices['skills'] if i < len(entries)]
 
+if not entries:
+    sys.exit(0)
+
 section_title = "Habilidades técnicas" if lang == "ES" else "Technical Skills"
 print(rf"\section{{{section_title}}}")
 

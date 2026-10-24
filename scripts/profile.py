@@ -51,6 +51,9 @@ else:
     first_role = next(iter(data.values()), {})
     profile_text = first_role.get(lang, first_role.get("ES", ""))
 
+if not profile_text:
+    sys.exit(0)
+
 section_title = "Perfil Profesional" if lang == "ES" else "Professional Profile"
 print(rf"\section{{{section_title}}}")
 

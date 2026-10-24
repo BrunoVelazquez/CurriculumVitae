@@ -40,6 +40,9 @@ if os.path.exists(choices_path):
     if 'projects' in choices:
         entries = [entries[i] for i in choices['projects'] if i < len(entries)]
 
+if not entries:
+    sys.exit(0)
+
 section_title = "Proyectos" if lang == "ES" else "Projects"
 print(rf"\section{{{section_title}}}")
 
